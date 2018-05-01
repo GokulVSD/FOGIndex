@@ -7,7 +7,7 @@ def syllables(word):
     multi_syllables = ["ia"]
 
     # following are separate syllables unless they're at the end of the word
-    multi_syllable_except_at_end = ["ie", "ya", "es", "ed"]
+    multi_syllable_except_at_end = ["io", "ua", "eo", "ui", "uo", "ya", "es", "ed"]
     
     word = word.lower()
     syllable_count = 0
@@ -36,3 +36,4 @@ def syllables(word):
         syllable_count -= 1
 
     return syllable_count
+
