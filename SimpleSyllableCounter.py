@@ -1,3 +1,5 @@
+# NOTE: words ending with es, ed, and ing are not counted towards the total number of syllables
+
 def syllables(word):
 
     # y can usually be considered as a syllable due to its pronunciation
@@ -13,6 +15,10 @@ def syllables(word):
     syllable_count = 0
     ends_with_vowel_flag = False
     last_letter = ""
+
+    # removing ing from the end of the word
+    if 'ing' == word[-3:]:
+        word = word[:-3]
     
     for letter in word:
         if letter in vowels:
@@ -36,4 +42,5 @@ def syllables(word):
         syllable_count -= 1
 
     return syllable_count
+
 
