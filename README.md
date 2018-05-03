@@ -8,9 +8,17 @@
 
 ##
 
-<h5 align="center">The compound word splitter is a variation of TimKam's compound word splitter, it tries to split the word into the largest non-compound word possible. The simple syllable splitter may not be very accurate, but for the purpose of FOG index calculation, it serves its purpose, while being relatively efficient.</h5>
+<h5 align="center">The compound word splitter utilises PyEnchant's dictionary, it tries to split the word into non-compound words containing two or more letters. The simple syllable splitter may not be very accurate, but for the purpose of FOG index calculation, it gets the job done, while being relatively efficient.</h5>
 
 ##
+
+## Install PyEnchant:
+
+```Python
+# PyEnchant doesn't work with 64 bit Python on Windows
+
+pip install pyenchant
+```
 
 ## Uses:
 
@@ -42,14 +50,16 @@ from SimpleSyllableCounter import syllables
 ```Python
 from CompoundWordSplitter import split
 
-  split('Hotdog','en-UK')
-  split('Shortsight','en-US')
-  split('Nailpolish')
+  split('Undertake','en-UK')
+  split('daydream','en-US')
+  split('Nail-Polish')
+  split('manual')
 ```
 #### Returns:
 
 ```Python
-['Hot', 'dog']
-['Short', 'sight']
-['Nail', 'polish']
+['Under', 'take']
+['day', 'dream']
+['Nail', 'Polish']
+['manual']
 ```
