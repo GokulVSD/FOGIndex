@@ -60,7 +60,6 @@ def split(compound_word, language='en_US'):
     return result
 
 
-print(split('of-course'))
 
 
 
